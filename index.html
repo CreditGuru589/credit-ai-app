@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AI Credit Dispute Letter Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <div class="brand">
+          <h1>AI Credit Dispute Letter Generator</h1>
+          <p class="tagline">Self-service software for creating FCRA-informed dispute letters.</p>
+        </div>
+        <div class="price">$39<span class="per">/month</span></div>
+      </div>
+    </header>
+
+    <main class="container main" role="main">
+      <section class="lead">
+        <div class="lead-copy">
+          <h2 class="headline">Create accurate, professional dispute letters — fast</h2>
+          <p class="sub">Our tool helps you draft clear, properly formatted dispute letters you can send to credit bureaus and creditors. This is self-service software and credit education; results are not guaranteed.</p>
+          <p class="cta-row"><button id="get-started" class="btn primary">Get Started</button></p>
+        </div>
+
+        <aside class="lead-cta">
+          <div class="card">
+            <div class="card-title">Monthly subscription</div>
+            <div class="card-price">$39 <span class="per">/ month</span></div>
+            <ul class="card-features">
+              <li>Unlimited letter generation</li>
+              <li>Downloadable PDF-ready letters</li>
+              <li>Self-service, no legal representation</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
++
+      <section class="form-section" aria-labelledby="form-title">
+        <h3 id="form-title">Get started — enter details</h3>
++        <form id="intake-form" class="form" autocomplete="off">
+          <div class="field">
+            <label for="fullName">Full name</label>
+            <input id="fullName" name="fullName" type="text" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
++
+          <div class="field">
++            <label for="bureau">Credit bureau</label>
++            <select id="bureau" name="bureau" required>
+              <option value="Experian">Experian</option>
+              <option value="Equifax">Equifax</option>
+              <option value="TransUnion">TransUnion</option>
+            </select>
+          </div>
++
+          <div class="field">
+            <label for="accountType">Account type</label>
+            <select id="accountType" name="accountType" required>
+              <option value="Collection">Collection</option>
+              <option value="Late Payment">Late Payment</option>
+              <option value="Charge-Off">Charge-Off</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
++
+          <div class="field">
+            <label for="reason">Dispute reason</label>
+            <select id="reason" name="reason" required>
+              <option value="Incorrect balance">Incorrect balance</option>
+              <option value="Unauthorized account">Unauthorized account</option>
+              <option value="Duplicate account">Duplicate account</option>
+              <option value="Identity theft">Identity theft</option>
+              <option value="Other">Other / Inaccurate information</option>
+            </select>
+          </div>
++
+          <div class="actions">
+            <button type="submit" class="btn primary">Get Started</button>
+            <button type="button" id="preview-btn" class="btn secondary">Preview letter</button>
+          </div>
++        </form>
++
+        <div id="confirmation" class="confirmation" aria-live="polite" hidden></div>
++
+        <section id="letter-preview" class="letter-preview" hidden>
+          <h4>Sample dispute letter</h4>
+          <pre id="letter-text" class="letter-text"></pre>
+        </section>
++      </section>
++    </main>
++
++    <footer class="site-footer" role="contentinfo">
++      <div class="container footer-inner">
++        <small>
++          This is a self-service credit education and dispute letter generation tool. No results are guaranteed. This product is not a credit repair service and does not provide legal advice.
++        </small>
++        <small style="display:block;margin-top:8px;color:#64748b;">Fair Credit Reporting Act reference: 15 U.S.C. § 1681 et seq. Use of the tool does not create an attorney-client relationship.</small>
++      </div>
++    </footer>
++  </body>
++</html>
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++ 
