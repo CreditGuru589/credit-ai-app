@@ -1,69 +1,89 @@
-:root {
-  --bg: #f6f9ff;
-  --card: #ffffff;
-  --primary: #1e6fff;
-  --accent: #0b69ff;
-  --muted: #64748b;
-  --text: #0f172a;
-  --radius: 10px;
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
 }
 
-* { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif; background: var(--bg); color: var(--text); -webkit-font-smoothing:antialiased }
-.container { max-width: 980px; margin: 0 auto; padding: 20px; }
+/* Body and container */
+body {
+  background: #f9f9f9;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+}
 
-.site-header { padding: 18px 0; border-bottom: 1px solid rgba(15,23,42,0.04); background: linear-gradient(180deg, rgba(14,88,255,0.03), transparent); }
-.header-inner { display:flex; align-items:center; justify-content:space-between; gap:16px; }
-.brand h1 { margin: 0; font-size: 1.15rem; }
-.tagline { margin: 6px 0 0; color: var(--muted); font-size: 0.92rem }
-.price { font-weight: 700; color: var(--accent); font-size: 1.05rem }
-.per { font-weight:500; color: var(--muted); font-size:0.9rem; margin-left:4px }
+.container {
+  background: white;
+  max-width: 600px;
+  width: 100%;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
 
-.main { padding: 28px 0 60px; }
-.lead { display: grid; grid-template-columns: 1fr 320px; gap: 20px; align-items: start; }
-+.headline { margin: 0 0 8px; font-size: 1.6rem }
-+.sub { margin: 0 0 14px; color: var(--muted); line-height:1.5 }
-+
-.lead-cta .card { background: var(--card); border-radius: var(--radius); padding: 16px; border: 1px solid rgba(15,23,42,0.05); box-shadow: 0 6px 18px rgba(2,6,23,0.04); }
-+.card-title { color: var(--muted); font-size: 0.9rem }
-+.card-price { font-size: 1.6rem; font-weight: 700; margin-top: 8px }
-+.card-features { margin: 12px 0 0; padding-left: 18px; color: var(--text) }
-+
-.form-section { margin-top: 24px; }
-+.form { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; align-items: start; }
-+.field { display:flex; flex-direction:column; }
-+.field label { font-size: 0.9rem; margin-bottom:6px; color: var(--muted) }
-+.field input, .field select, .field textarea { padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(15,23,42,0.06); font-size: 0.95rem }
-+.field input:focus, .field select:focus, .field textarea:focus { outline: 3px solid rgba(30,111,255,0.12); border-color: var(--primary) }
-+
-.field:nth-child(odd) { }
-+.field-full { grid-column: 1 / -1 }
-+
-.actions { grid-column: 1 / -1; display:flex; gap:12px; margin-top:6px }
-+.btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:10px 14px; border-radius:10px; border:0; cursor:pointer; font-weight:600 }
-+.btn.primary { background: var(--primary); color: #fff }
-+.btn.secondary { background: transparent; color: var(--accent); border: 1px solid rgba(14,88,255,0.12); }
-+
-.confirmation { margin-top:12px; padding:12px 14px; border-radius:8px; background: #f1f8ff; color: var(--text); border: 1px solid rgba(14,88,255,0.08) }
-+
-.letter-preview { grid-column: 1 / -1; margin-top:16px; background: var(--card); border: 1px solid rgba(15,23,42,0.04); padding:16px; border-radius:10px }
-+.letter-text { white-space: pre-wrap; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Segoe UI Mono", monospace; background: #f8fafc; padding:12px; border-radius:6px; border:1px solid rgba(15,23,42,0.03) }
-+
-.site-footer { border-top: 1px solid rgba(15,23,42,0.04); padding: 20px 0; text-align:center; color: var(--muted); font-size: 0.9rem }
-+.footer-inner { display:flex; flex-direction:column; gap:6px; align-items:center }
-+
-@media (max-width: 880px) {
-  .lead { grid-template-columns: 1fr; }
-+  .form { grid-template-columns: 1fr; }
-+  .lead-cta { order: 2 }
-+}
-+
-@media (max-width: 520px) {
-  .container { padding: 14px }
-+  .headline { font-size: 1.25rem }
-+  .card-price { font-size: 1.2rem }
-+}
-+
-/* Accessibility helpers */
-.sr-only { position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden }
-+
+/* Headings */
+h1, h2 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #222;
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 12px 15px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.4);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Button */
+button {
+  background-color: #007bff;
+  color: white;
+  font-weight: 600;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Footer or small text */
+small {
+  display: block;
+  margin-top: 20px;
+  color: #666;
+  font-size: 0.9rem;
+  text-align: center;
+}
