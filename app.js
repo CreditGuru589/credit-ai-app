@@ -1,32 +1,29 @@
-// Get form and output container
-const form = document.querySelector('form');
-const output = document.createElement('div');
-output.style.marginTop = '20px';
-form.parentNode.appendChild(output);
+const form = document.querySelector('#intake-form');
+const output = document.querySelector('#letter-text'); // from your letter preview section
 
-// Listen for form submission
 form.addEventListener('submit', function(e) {
   e.preventDefault();
 
-  // Get form values
-  const name = document.querySelector('#name').value;
+  // Match the IDs in your HTML
+  const name = document.querySelector('#fullName').value;
   const bureau = document.querySelector('#bureau').value;
-  const account = document.querySelector('#account').value;
+  const account = document.querySelector('#accountType').value;
   const reason = document.querySelector('#reason').value;
 
-  // Simple simulated AI letter
+  // Generate letter
   const letter = `
-  Dear ${bureau},
+Dear ${bureau},
 
-  I, ${name}, am writing to dispute the following item on my credit report: ${account}. 
-  Reason: ${reason}.
+I, ${name}, am writing to dispute the following item on my credit report: ${account}. 
+Reason: ${reason}.
 
-  Please investigate this matter and correct any inaccuracies in accordance with the FCRA.
+Please investigate this matter and correct any inaccuracies in accordance with the FCRA.
 
-  Thank you,
-  ${name}
+Thank you,
+${name}
   `;
 
-  // Display the letter
-  output.innerHTML = `<h2>Your AI-generated dispute letter:</h2><pre>${letter}</pre>`;
+  // Show letter in the preview section
+  output.textContent = letter;
+  document.querySelector('#letter-preview').hidden = false;
 });
